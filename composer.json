@@ -1,12 +1,12 @@
 {
-    "name": "laravel/socialite",
-    "description": "Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
+    "name": "yanwenwu/socialite",
+    "description": "fork from Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
     "keywords": ["oauth", "laravel"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Taylor Otwell",
-            "email": "taylor@laravel.com"
+            "name": "wuyanwen",
+            "email": "wuyanwen1992@gmail.com"
         }
     ],
     "require": {
