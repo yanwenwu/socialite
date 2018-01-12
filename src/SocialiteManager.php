@@ -12,6 +12,8 @@ use Laravel\Socialite\One\TwitterProvider;
 use Laravel\Socialite\Two\FacebookProvider;
 use Laravel\Socialite\Two\LinkedInProvider;
 use Laravel\Socialite\Two\BitbucketProvider;
+use Laravel\Socialite\Two\QqProvider;
+use Laravel\Socialite\Two\SinaProvider;
 use League\OAuth1\Client\Server\Twitter as TwitterServer;
 
 class SocialiteManager extends Manager implements Contracts\Factory
@@ -126,7 +128,31 @@ class SocialiteManager extends Manager implements Contracts\Factory
             $this->app['request'], new TwitterServer($this->formatConfig($config))
         );
     }
-
+    
+    /**
+     * Create an instance of the specified driver.
+     *
+     * @return \Laravel\Socialite\Two\AbstractProvider
+     */
+    protected function createQqDriver()
+    {
+        $config = $this->app['config']['services.qq'];
+        
+        return $this->buildProvider(QqProvider::class, $config);
+    }
+    
+    /**
+     * Create an instance of the specified driver.
+     *
+     * @return \Laravel\Socialite\Two\AbstractProvider
+     */
+    protected function createSinaDriver()
+    {
+        $config = $this->app['config']['services.sina'];
+        
+        return $this->buildProvider(SinaProvider::class, $config);
+    }
+    
     /**
      * Format the server configuration.
      *
